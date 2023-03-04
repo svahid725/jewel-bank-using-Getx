@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jewel_bank/Controllers/Monetization/monetization_controller.dart';
 import 'package:jewel_bank/Utils/colors_utils.dart';
 import 'package:jewel_bank/Utils/routing_utils.dart';
 import 'package:jewel_bank/Widgets/bottom_nav_bar.dart';
@@ -14,7 +13,7 @@ class MonetizationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MonetizationController controller = Get.put(MonetizationController());
+    // final MonetizationController controller = Get.put(MonetizationController());
     final TextStyle inContainerText = Get.textTheme.bodyText2!
         .copyWith(color: Colors.white, fontWeight: FontWeight.w700);
     return SafeArea(
@@ -39,7 +38,7 @@ class MonetizationScreen extends StatelessWidget {
             ],
           ),
           leading: IconButton(
-            onPressed: () => Get.toNamed(Routes.support.name),
+            onPressed: () => Get.toNamed(RouteUtils.support.name),
             icon: const Icon(
               CupertinoIcons.text_alignleft,
               size: 22,
@@ -65,13 +64,13 @@ class MonetizationScreen extends StatelessWidget {
                 Container(
                   height: 118,
                   width: 24,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color(0xff24CDD8),
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(16),
                           bottomRight: Radius.circular(16))),
                 ),
-                SizedBox(width: 11),
+                const SizedBox(width: 11),
                 Text(
                   '425.97 USD',
                   style: Get.theme.textTheme.headline5!.copyWith(
@@ -79,41 +78,41 @@ class MonetizationScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       fontSize: 26),
                 ),
-                SizedBox(width: 11),
+                const SizedBox(width: 11),
                 Container(
                   height: 28,
                   width: 39,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32),
-                    gradient: LinearGradient(colors: [
+                    gradient: const LinearGradient(colors: [
                       MyColors.greenGradientBegin,
                       MyColors.greenGradientEnd
                     ]),
                   ),
                   child: Text('23', style: inContainerText),
                 ),
-                SizedBox(width: 6),
+                const SizedBox(width: 6),
                 Container(
                   height: 28,
                   width: 87,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(32),
-                      gradient: LinearGradient(colors: [
+                      gradient: const LinearGradient(colors: [
                         MyColors.greenGradientBegin,
                         MyColors.greenGradientEnd
                       ])),
                   child: Text('December', style: inContainerText),
                 ),
-                SizedBox(width: 6),
+                const SizedBox(width: 6),
                 Container(
                   height: 28,
                   width: 54,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(32),
-                      gradient: LinearGradient(colors: [
+                      gradient: const LinearGradient(colors: [
                         MyColors.greenGradientBegin,
                         MyColors.greenGradientEnd
                       ])),
@@ -122,12 +121,12 @@ class MonetizationScreen extends StatelessWidget {
               ],
             ),
             Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 12, 0),
+                padding: const EdgeInsets.fromLTRB(20, 0, 12, 0),
                 child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         DetailItemsCard(
                             text: 'type Username',
                             begin: MyColors.purpleGradientBegin,
@@ -139,10 +138,10 @@ class MonetizationScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         DetailItemsCard(
                             text: 'monetization code',
                             begin: MyColors.purpleGradientBegin,
@@ -156,7 +155,7 @@ class MonetizationScreen extends StatelessWidget {
                     )
                   ],
                 )),
-            SizedBox(height: 14),
+            const SizedBox(height: 14),
             Center(
               child: Container(
                 height: 28,
@@ -164,7 +163,7 @@ class MonetizationScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32),
-                    gradient: LinearGradient(colors: [
+                    gradient: const LinearGradient(colors: [
                       MyColors.greenGradientBegin,
                       MyColors.greenGradientEnd
                     ])),
@@ -178,14 +177,14 @@ class MonetizationScreen extends StatelessWidget {
                   Text('Setting Monetization',
                       style: inContainerText.copyWith(
                           color: MyColors.primaryTextColor)),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Container(
                     height: 24,
                     width: 44,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(32),
-                        gradient: LinearGradient(colors: [
+                        gradient: const LinearGradient(colors: [
                           MyColors.pinkGradientBegin,
                           MyColors.pinkGradientEnd
                         ])),
@@ -197,7 +196,7 @@ class MonetizationScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 13, 20, 15),
+              padding: const EdgeInsets.fromLTRB(20, 13, 20, 15),
               child: Column(
                 children: [
                   Row(
@@ -210,23 +209,23 @@ class MonetizationScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             color: MyColors.primaryTextColor,
-                            boxShadow: [
-                              BoxShadow(
+                            boxShadow:const [
+                               BoxShadow(
                                   color: Color(0x807D64FF),
                                   blurRadius: 20,
                                   offset: Offset(0, 8))
                             ]),
                         child: Column(
                           children: [
-                            SizedBox(height: 32),
+                            const SizedBox(height: 32),
                             CircularPercentIndicator(
                               radius: 34,
-                              lineWidth:6.5,
+                              lineWidth: 6.5,
                               percent: 0.12,
                               center: Text(
                                 "12%",
-                                style:
-                                Get.theme.textTheme.bodyText2!.apply(color: Colors.white),
+                                style: Get.theme.textTheme.bodyText2!
+                                    .apply(color: Colors.white),
                               ),
                               animationDuration: 1,
                               animation: true,
@@ -237,25 +236,30 @@ class MonetizationScreen extends StatelessWidget {
                                 MyColors.greenGradientEnd
                               ]),
                             ),
-                            SizedBox(height: 24),
-                            Text('Automatic \n Monetization', textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.w700)),
-                           SizedBox(height: 22),
-                           GradientText('Tap to Activate', colors: [MyColors.greenGradientBegin,MyColors.greenGradientEnd])
+                            const SizedBox(height: 24),
+                            const Text('Automatic \n Monetization',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontWeight: FontWeight.w700)),
+                            const SizedBox(height: 22),
+                            GradientText('Tap to Activate', colors:const [
+                              MyColors.greenGradientBegin,
+                              MyColors.greenGradientEnd
+                            ])
                           ],
                         ),
                       ),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                       Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(left: 16),
+                            padding: const EdgeInsets.only(left: 16),
                             width: 160,
                             height: 80,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
+                                boxShadow:const [
+                                   BoxShadow(
                                       color: Color(0x14414141),
                                       blurRadius: 20,
                                       offset: Offset(0, 8))
@@ -269,7 +273,7 @@ class MonetizationScreen extends StatelessWidget {
                                   style: inContainerText.copyWith(
                                       color: MyColors.secondaryGrayTextColor),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 6,
                                 ),
                                 Text('\$78.42',
@@ -279,15 +283,15 @@ class MonetizationScreen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 16),
-                            padding: EdgeInsets.only(left: 16, top: 0),
+                            margin: const EdgeInsets.only(top: 16),
+                            padding: const EdgeInsets.only(left: 16, top: 0),
                             width: 160,
                             height: 124,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
+                                boxShadow: const[
+                                   BoxShadow(
                                       color: Color(0x14414141),
                                       blurRadius: 20,
                                       offset: Offset(0, 8))
@@ -298,13 +302,13 @@ class MonetizationScreen extends StatelessWidget {
                               children: [
                                 Assets.img.monetization.img
                                     .image(width: 34, height: 34),
-                                SizedBox(height: 6),
+                                const SizedBox(height: 6),
                                 Text(
                                   'today Withdraw',
                                   style: inContainerText.copyWith(
                                       color: MyColors.secondaryGrayTextColor),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 6,
                                 ),
                                 Text('\$67.66',
@@ -317,7 +321,7 @@ class MonetizationScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(height: 14),
+                  const SizedBox(height: 14),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Container(
                       height: 30,
@@ -325,7 +329,7 @@ class MonetizationScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(32),
-                          gradient: LinearGradient(colors: [
+                          gradient: const LinearGradient(colors: [
                             MyColors.greenGradientBegin,
                             MyColors.greenGradientEnd
                           ])),
@@ -334,14 +338,14 @@ class MonetizationScreen extends StatelessWidget {
                         style: inContainerText,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Container(
                       height: 30,
                       width: 141,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(32),
-                          gradient: LinearGradient(colors: [
+                          gradient: const LinearGradient(colors: [
                             MyColors.pinkGradientBegin,
                             MyColors.pinkGradientBegin
                           ])),

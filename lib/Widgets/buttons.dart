@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jewel_bank/Utils/colors_utils.dart';
 
 class MyElevatedButton extends StatelessWidget {
   const MyElevatedButton(
@@ -21,7 +20,7 @@ class MyElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 50),
+      margin: const EdgeInsets.only(bottom: 50),
       width: 136,
       height: 56,
       decoration: BoxDecoration(
@@ -43,8 +42,8 @@ class MyElevatedButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               icon
-                  ? SizedBox(width: 16)
-                  : SizedBox(
+                  ? const SizedBox(width: 16)
+                  : const SizedBox(
                       width: 14,
                     ),
               Text(
@@ -53,8 +52,8 @@ class MyElevatedButton extends StatelessWidget {
                 style: Get.theme.textTheme.bodyText2!
                     .copyWith(fontWeight: FontWeight.w700, color: Colors.white),
               ),
-              icon ? SizedBox(width: 24) : SizedBox(),
-              icon ? Icon(Icons.arrow_forward, color: Colors.white) : SizedBox()
+              icon ? const SizedBox(width: 24) : const SizedBox(),
+              icon ? const Icon(Icons.arrow_forward, color: Colors.white) : const SizedBox()
             ],
           )),
     );
@@ -79,7 +78,7 @@ class MySuffixIcon extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 21, 0),
+        margin: const EdgeInsets.fromLTRB(0, 0, 21, 0),
         width: 28,
         height: 28,
         decoration: BoxDecoration(

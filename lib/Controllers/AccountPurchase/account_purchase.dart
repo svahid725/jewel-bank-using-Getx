@@ -6,7 +6,7 @@ class AccountPurchaseController extends GetxController{
   @override
   void onInit() {
     super.onInit();
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Color(0xff1C162E),
       systemNavigationBarIconBrightness: Brightness.light,
       systemNavigationBarColor: Color(0xff1C162E)
@@ -14,7 +14,7 @@ class AccountPurchaseController extends GetxController{
   }
   @override
   void onClose() {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarIconBrightness:  Brightness.dark,
         systemNavigationBarIconBrightness: Brightness.dark,
       statusBarColor: Color(0xffffffff),

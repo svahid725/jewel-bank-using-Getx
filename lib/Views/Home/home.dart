@@ -9,7 +9,8 @@ import 'package:jewel_bank/gen/assets.gen.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final HomeController controller = Get.put(HomeController(),);
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: const MyBottomNavigationBar(),
+        bottomNavigationBar: MyBottomNavigationBar(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -62,15 +63,15 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: HomeMainCard(),
             ),
-            // seccond card
+            // second card
             Center(
               child: Container(
                 padding: const EdgeInsets.only(left: 20, right: 26),
                 height: 75,
                 width: Get.width - 40,
                 decoration: BoxDecoration(
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow:const [
+                       BoxShadow(
                           color: MyColors.homeCardShadow,
                           blurRadius: 20,
                           offset: Offset(0, 8))
@@ -175,12 +176,14 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(width: 12),
-                  Container(
+                  SizedBox(
                     width: 42,
                     height: 20,
                     child: Stack(
                       children: [
                         Positioned(
+                          left: 0,
+                          right: 13,
                           child: Container(
                             height: 20,
                             width: 20,
@@ -188,10 +191,10 @@ class HomeScreen extends StatelessWidget {
                                 color: Color(0xffFF3A79),
                                 shape: BoxShape.circle),
                           ),
-                          left: 0,
-                          right: 13,
                         ),
                         Positioned(
+                          left: 13,
+                          right: 0,
                           child: Container(
                             height: 20,
                             width: 20,
@@ -199,8 +202,6 @@ class HomeScreen extends StatelessWidget {
                                 color: Color(0xffFFD035),
                                 shape: BoxShape.circle),
                           ),
-                          left: 13,
-                          right: 0,
                         ),
                       ],
                     ),
@@ -424,9 +425,9 @@ class HistoryCardItem extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         boxShadow: [BoxShadow(
-          color: Color(0xff414141).withOpacity(0.08),
+          color: const Color(0xff414141).withOpacity(0.08),
           blurRadius: 20,
-          offset: Offset(0,8)
+          offset: const Offset(0,8)
         )],
         gradient:
             LinearGradient(colors: [gradientBeginColor!, gradientEndColor!]),

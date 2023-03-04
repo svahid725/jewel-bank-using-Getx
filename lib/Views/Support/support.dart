@@ -18,10 +18,13 @@ class SupportScreen extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Support',
-                  style: Get.theme.textTheme.bodyText1!.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: MyColors.primaryTextColor)),
+              Text(
+                'Support',
+                style: Get.theme.textTheme.bodyText1!.copyWith(
+                  fontWeight: FontWeight.w700,
+                  color: MyColors.primaryTextColor,
+                ),
+              ),
               IconButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -43,13 +46,11 @@ class SupportScreen extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             children: [
-              SupportContainer(),
-              SizedBox(height: 18),
+              const SupportContainer(),
+              const SizedBox(height: 18),
               Expanded(
                 child: ListView(
-                    children: ListTile.divideTiles(
-                        context: context,
-                        tiles: [
+                    children: ListTile.divideTiles(context: context, tiles: [
                   MyListTile(
                     title: 'Director of Support',
                     subtitle: 'Call To Director of Support',
@@ -111,8 +112,8 @@ class MyListTile extends StatelessWidget {
       ),
       subtitle: Row(
         children: [
-          Icon(Icons.phone, size: 14),
-          SizedBox(width: 9),
+          const Icon(Icons.phone, size: 14),
+          const SizedBox(width: 9),
           Text(
             subtitle,
             style: Get.theme.textTheme.caption!
@@ -121,13 +122,11 @@ class MyListTile extends StatelessWidget {
         ],
       ),
       leading: CircleAvatar(
-        child: image,
         backgroundColor: Colors.transparent,
+        child: image,
       ),
-      trailing: Icon(Icons.output, color: Colors.black),
+      trailing: const Icon(Icons.output, color: Colors.black),
       style: ListTileStyle.list,
     );
   }
 }
-
-
