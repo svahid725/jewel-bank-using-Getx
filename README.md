@@ -1,6 +1,7 @@
 # jewel_bank
 
 A new Flutter project.
+implementing a complex ui with getx state management
 
 ## Getting Started
 
